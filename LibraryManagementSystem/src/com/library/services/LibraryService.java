@@ -38,7 +38,7 @@ public class LibraryService {
 		
 		System.out.println("Book not available");
 	}
-	
+
 	public void returnBook(String userId)
 	{
 		for(Book book : books)
@@ -53,6 +53,4 @@ public class LibraryService {
 		
 		System.out.println("No book found to return..");
 	}
-	
-	
 }

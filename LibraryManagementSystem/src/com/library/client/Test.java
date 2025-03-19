@@ -22,16 +22,16 @@ public class Test {
 			switch (choice) {
 			case 1: {
 				System.out.println("Enter your user name : ");
-				String userName = sc.nextLine();
+				String userName = sc.next() + sc.nextLine();
 
 				System.out.println("Enter your userId : ");
-				String userId = sc.nextLine();
+				String userId = sc.next() + sc.nextLine();
 
 				User user = new User(userName, userId);
 				ls.displayBooks();
 
 				System.out.println("Enter Book ISBN to borrow a book : ");
-				String isbn = sc.nextLine();
+				String isbn = sc.next() + sc.nextLine();
 
 				ls.borrowBook(user, isbn);
 				break;
@@ -39,7 +39,7 @@ public class Test {
 
 			case 2: {
 				System.out.println("Enter your userId : ");
-				String userId = sc.nextLine();
+				String userId = sc.next() + sc.nextLine();
 
 				ls.returnBook(userId);
 				break;
@@ -47,10 +47,10 @@ public class Test {
 
 			case 3: {
 				System.out.println("Enter the admin password : ");
-				String passwd = sc.nextLine();
+				String passwd = sc.next() + sc.nextLine();
 
 				if (as.login(passwd))
-					as.adminMenu(sc);
+					as.adminMenu();
 				else
 					System.out.println("Incorrect password..");
 

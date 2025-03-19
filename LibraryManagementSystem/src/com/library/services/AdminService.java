@@ -7,6 +7,8 @@ import com.library.models.Book;
 
 public class AdminService {
 
+	Scanner sc = new Scanner(System.in);
+
 	private Book[] books = new Book[10]; // fixed size for the simplicity purpose
 	private int bookCount = 5;
 
@@ -14,7 +16,7 @@ public class AdminService {
 		return Admin.authenticate(pwd);
 	}
 
-	public void adminMenu(Scanner sc) {
+	public void adminMenu() {
 		while (true) {
 			System.out.println("**********Admin Panel********** \n 1. Add a book \n 2. Remove a book \n 3. Logout");
 
@@ -24,13 +26,13 @@ public class AdminService {
 			switch (choice) {
 			case 1: {
 				System.out.println("Enter Book Title : ");
-				String title = sc.nextLine();
+				String title = sc.next() + sc.nextLine();
 
 				System.out.println("Enter Author Name : ");
-				String author = sc.nextLine();
+				String author = sc.next() + sc.nextLine();
 
 				System.out.println("Enter ISBN Number : ");
-				String isbn = sc.nextLine();
+				String isbn = sc.next() + sc.nextLine();
 
 				addBook(new Book(title, author, isbn));
 				break;
@@ -38,7 +40,7 @@ public class AdminService {
 
 			case 2: {
 				System.out.println("Enter ISBN Number to remove a book : ");
-				String isbn = sc.nextLine();
+				String isbn = sc.next() + sc.nextLine();
 
 				removeBook(isbn);
 				break;
